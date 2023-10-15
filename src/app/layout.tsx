@@ -19,6 +19,7 @@ export default function RootLayout({
 				<div className="wrapper">
 					<Header />
 					<main>{children}</main>
+					<button className="question-button">Question Button</button>
 					<Footer />
 				</div>
 			</body>
