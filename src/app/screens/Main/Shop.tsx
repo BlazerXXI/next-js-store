@@ -44,7 +44,7 @@ const Shop = () => {
 									href={`/product/${product.id}`}
 									key={product.id}
 								>
-									<div className="flex justify-center">
+									<div className="flex justify-center m-auto">
 										<Image
 											src={product.image}
 											width={200}
@@ -53,7 +53,7 @@ const Shop = () => {
 											className="shop__img"
 										/>
 									</div>
-									<div className="flex flex-col justify-between items-center min-h-[100px]">
+									<div className="flex flex-col justify-between items-center min-h-[100px] fw-bold">
 										<h3 className="shop__title text-center">{product.title}</h3>
 										<small>
 											{product.price} <span>$</span>
