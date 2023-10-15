@@ -53,7 +53,7 @@ const Shop = () => {
 											className="shop__img"
 										/>
 									</div>
-									<div className="flex flex-col justify-between items-center min-h-[100px] fw-bold">
+									<div className="flex flex-col justify-between items-center min-h-[100px] font-bold">
 										<h3 className="shop__title text-center">{product.title}</h3>
 										<small>
 											{product.price} <span>$</span>
