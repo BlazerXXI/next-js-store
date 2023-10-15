@@ -1,10 +1,11 @@
-"use client";
 import React from "react";
+
+import Shop from "./Shop";
 
 const Main = () => {
 	return (
 		<>
-			<section className="shop"></section>
+			<Shop />
 		</>
 	);
 };
