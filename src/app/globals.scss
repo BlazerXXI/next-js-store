@@ -18,6 +18,7 @@
 
 html,
 body {
+	font-family: system-ui, -apple-system, Roboto, sans-serif;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -56,8 +57,8 @@ main {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	margin: 0px 60px;
-	padding-top: 108px;
+	margin: 60px 0px;
+	padding: 108px 0px;
 }
 
 footer {

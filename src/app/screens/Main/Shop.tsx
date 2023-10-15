@@ -34,23 +34,31 @@ const Shop = () => {
 				) : (
 					<ul className="shop__list flex flex-wrap gap-8 justify-center">
 						{products.map((product: IProducts) => (
-							<li className="shop__item w-80  shadow-lg " key={product.id}>
+							<li
+								className="shop__item w-80 shadow-lg bg-white"
+								key={product.id}
+							>
+								{/* TODO: fix image, he's height is wrong */}
 								<Link
 									className="flex flex-col justify-between h-full items-center gap-4 p-4"
 									href={`/product/${product.id}`}
 									key={product.id}
 								>
-									<Image
-										src={product.image}
-										width={200}
-										height={200}
-										alt={product.title}
-										className="shop__img"
-									/>
-									<h3 className="shop__title text-center">{product.title}</h3>
-									<small>
-										{product.price} <span>$</span>
-									</small>
+									<div className="flex justify-center">
+										<Image
+											src={product.image}
+											width={200}
+											height={200}
+											alt={product.title}
+											className="shop__img"
+										/>
+									</div>
+									<div className="flex flex-col justify-between items-center min-h-[100px]">
+										<h3 className="shop__title text-center">{product.title}</h3>
+										<small>
+											{product.price} <span>$</span>
+										</small>
+									</div>
 								</Link>
 							</li>
 						))}
