@@ -38,19 +38,24 @@ const Shop = () => {
 								className="shop__item w-80 shadow-lg bg-white"
 								key={product.id}
 							>
-								{/* TODO: fix image, he's height is wrong */}
+								{/* TODO: fix ratio image, console retun warning */}
+
 								<Link
 									className="flex flex-col justify-between h-full items-center gap-4 p-4"
-									href={`/product/${product.id}`}
+									// TODO: create link && dynamic page
+
+									// TODO: add functional "click to preview"
+
+									href={`/screens/productPage/${product.id}`}
 									key={product.id}
 								>
 									<div className="flex justify-center m-auto">
 										<Image
 											src={product.image}
 											width={200}
-											height={200}
+											height={300}
 											alt={product.title}
-											className="shop__img"
+											className="shop__img  max-w-[200px] h-auto"
 										/>
 									</div>
 									<div className="flex flex-col justify-between items-center min-h-[100px] font-bold">
@@ -58,6 +63,9 @@ const Shop = () => {
 										<small>
 											{product.price} <span>$</span>
 										</small>
+
+										{/* // TODO: functional add to cart */}
+										{/* // TODO: functional add to wishlist */}
 									</div>
 								</Link>
 							</li>

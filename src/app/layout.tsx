@@ -2,10 +2,10 @@ import "./globals.scss";
 import type { Metadata } from "next";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+	
 export const metadata: Metadata = {
-	title: "Next Js Store",
-	description: "Next Js Store",
+	title: "Next Store",
+	description: "Next Store",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 				<div className="wrapper">
 					<Header />
 					<main>{children}</main>
-					<button className="question-button">Question Button</button>
+					<button className="call-us">Call us</button>
 					<Footer />
 				</div>
 			</body>
