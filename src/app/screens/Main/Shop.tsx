@@ -9,7 +9,7 @@ const Shop = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		getProducts.getLimited().then((data) => {
+		getProducts.getAll().then((data) => {
 			setProducts(data);
 			setLoading(false);
 		});

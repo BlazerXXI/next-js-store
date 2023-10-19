@@ -17,7 +17,7 @@ const Product = ({
 	const [product, setProduct] = useState<IProducts>();
 
 	useEffect(() => {
-		getProducts.getLimited().then((data) => {
+		getProducts.getAll().then((data) => {
 			setProducts(data);
 			setProduct(data[params.slug - 1]);
 			setLoading(false);

@@ -11,7 +11,7 @@ const Header = () => {
 			<div className="header__container container">
 				<div className="flex justify-between items-center">
 					<MenuBar />
-					<div>
+					<div className="flex gap-4">
 						<Link
 							className="hover:opacity-80 transition-all active:scale-90"
 							href={"/screens/account"}

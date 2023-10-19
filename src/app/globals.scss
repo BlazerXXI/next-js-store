@@ -68,6 +68,10 @@ a:not(.logo) {
 	}
 }
 
+a {
+	outline: none;
+}
+
 .wrapper {
 	position: relative;
 	width: 100%;
