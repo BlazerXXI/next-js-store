@@ -1,4 +1,4 @@
-// Types 
+// Types
 type IProducts = {
 	id: number;
 	title: string;
@@ -6,4 +6,10 @@ type IProducts = {
 	description: string;
 	category: string;
 	image: string;
+};
+
+type IButton = {
+	cart?: boolean;
+	wishlist?: boolean;
+	buy?: boolean;
 };

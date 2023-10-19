@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../../Main/getProducts";
 import NotFound from "../NotFound";
+import ButtonsProductCard from "@/app/components/ButtonsProductCard";
 
 const Product = ({
 	params,
@@ -41,13 +42,13 @@ const Product = ({
 			) : product !== undefined ? (
 				<section className="product">
 					<div className="product__container container flex md:flex-row flex-col gap-8 shadow-lg py-8 px-4">
-						<div className="flex justify-start">
+						<div className="max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
 							<Image
 								src={product.image}
 								width={200}
 								height={300}
 								alt={product.title}
-								className="shop__img  max-w-[200px] h-auto object-contain"
+								className="shop__img md:min-w-[400px] min-w-[200px] h-auto object-contain"
 							/>
 						</div>
 						<div className="flex flex-col justify-between items-start min-h-[100px] gap-6">
@@ -64,27 +65,11 @@ const Product = ({
 									<h3 className="font-semibold">{product.category}</h3>
 								</div>
 							</div>
-							<div className="flex max-sm:flex-col flex-row justify-between items-center w-full">
+							<div className="flex max-sm:flex-col flex-row justify-between items-center w-full max-[450px]:gap-4">
 								<p className="font-semibold">
 									{product.price} <span>$</span>
 								</p>
-								<div className="flex gap-4">
-									{/* // TODO: functional add to cart */}
-									{/* // TODO: functional add to wishlist */}
-									{/* // TODO: functional Buy now */}
-									<button
-										className="bg-red-500 text-white px-4 py-2 rounded font-semibold hover:bg-red-600 active:bg-red-500 transition-all duration-300 hover:shadow active:scale-95
-									"
-									>
-										Add to cart
-									</button>
-									<button className=" bg-blue-500 text-white px-4 py-2 rounded font-semibold hover:bg-blue-600 active:bg-blue-500 transition-all duration-300 hover:shadow active:scale-95">
-										Add to wishlist
-									</button>
-									<button className=" bg-green-500 text-white px-4 py-2 rounded font-semibold hover:bg-green-600 active:bg-green-500 transition-all duration-300 hover:shadow active:scale-95">
-										Buy now
-									</button>
-								</div>
+								<ButtonsProductCard cart wishlist buy />
 							</div>
 						</div>
 					</div>
