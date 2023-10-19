@@ -12,4 +12,5 @@ type IButton = {
 	cart?: boolean;
 	wishlist?: boolean;
 	buy?: boolean;
+	buttonStyle?: string;
 };
