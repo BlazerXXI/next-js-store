@@ -141,3 +141,12 @@ footer {
 		bottom: 0 !important;
 	}
 }
+
+// menu-burger__menu
+.menu-burger__menu {
+	transition: all 0.3s ease 0s;
+}
+
+.open-menu .menu-burger__menu {
+	transform: translate(0);
+}

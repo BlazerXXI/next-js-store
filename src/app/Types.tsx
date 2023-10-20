@@ -14,3 +14,7 @@ type IButton = {
 	buy?: boolean;
 	buttonStyle?: string;
 };
+
+type ISidebar = {
+	propStyles?: string;
+};

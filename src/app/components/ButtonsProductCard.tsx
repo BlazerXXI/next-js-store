@@ -15,6 +15,7 @@ const ButtonsProductCard = (props: IButton) => {
 									`}
 				>
 					Add to cart
+					{/* add icons */}
 				</button>
 			)}
 			{wishlist && (
@@ -23,6 +24,7 @@ const ButtonsProductCard = (props: IButton) => {
 					${buttonStyle}`}
 				>
 					Add to wishlist
+					{/* add icons */}
 				</button>
 			)}
 			{buy && (
@@ -31,6 +33,7 @@ const ButtonsProductCard = (props: IButton) => {
 					${buttonStyle}`}
 				>
 					Buy now
+					{/* add icons */}
 				</button>
 			)}
 		</div>

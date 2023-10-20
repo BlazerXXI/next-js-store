@@ -4,6 +4,7 @@ import React from "react";
 import MenuBurger from "./MenuBurger";
 import MenuBar from "./MenuBar";
 import { Avatar } from "@mui/joy";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
 	return (
@@ -24,6 +25,7 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
+			<Sidebar />
 		</header>
 	);
 };

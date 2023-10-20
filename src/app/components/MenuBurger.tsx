@@ -1,15 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const MenuBurger = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const openMenu = () => {
 		setIsOpen(!isOpen);
+		document.querySelector("body")?.classList.toggle("open-menu");
 	};
 
 	return (
-		<div className="menu-burger">
+		<div className="menu-burger z-10">
 			{/* TODO: add menu burger (icons with mui of fw )  */}
 			{/* TODO: add cart, later functional for cart */}
 
