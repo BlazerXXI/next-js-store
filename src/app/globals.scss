@@ -129,7 +129,8 @@ footer {
 }
 
 // open-menu-burger
-.open-menu-burger {
+.open-menu .open-menu-burger {
+	background-color: transparent;
 	&:before {
 		content: "";
 		transform: rotate(45deg);

@@ -5,26 +5,21 @@ import React, { useEffect, useState } from "react";
 const Sidebar = (props: ISidebar) => {
 	const { propStyles } = props;
 
-	useEffect(() => {
+	const closeMenu = () => {
 		const body = document.querySelector("body");
 		const sidebarLinks = document.querySelectorAll(".sidebar__link");
+		const menuBurgerLine = document.querySelector(".menu-burger__line");
 
-		const toggleMenu = () => {
-			body?.classList.toggle("open-menu");
+		const closeMenuFunction = () => {
+			body?.classList.remove("open-menu");
+			menuBurgerLine?.classList.remove("open-menu-burger");
 		};
 
 		sidebarLinks.forEach((link) => {
-			const clickHandler = () => {
-				toggleMenu();
-			};
-
-			link.addEventListener("click", clickHandler);
-
-			return () => {
-				link.removeEventListener("click", clickHandler);
-			};
+			link.addEventListener("click", closeMenuFunction);
 		});
-	}, []);
+	};
+	closeMenu();
 
 	return (
 		<div
@@ -33,17 +28,21 @@ const Sidebar = (props: ISidebar) => {
 			{/* TODO: add menu items */}
 			<ul className="flex flex-col gap-4 justify-center md:items-start items-center text-[20px] max-md:h-full">
 				<li>
-					<Link className="sidebar__link" rel="stylesheet" href="./">
+					<Link className="sidebar__link" rel="stylesheet" href="/">
 						Home
 					</Link>
 				</li>
 				<li>
-					<Link className="sidebar__link" rel="stylesheet" href="#">
+					<Link className="sidebar__link" rel="stylesheet" href="/screens/cart">
 						Cart
 					</Link>
 				</li>
 				<li>
-					<Link className="sidebar__link" rel="stylesheet" href="#">
+					<Link
+						className="sidebar__link"
+						rel="stylesheet"
+						href="/screens/wishlist"
+					>
 						Wishlist
 					</Link>
 				</li>
@@ -57,7 +56,7 @@ const Sidebar = (props: ISidebar) => {
 					</Link>
 				</li>
 				<li>
-					<Link className="sidebar__link" rel="stylesheet" href="#">
+					<Link className="sidebar__link" rel="stylesheet" href="/screens/help">
 						Help
 					</Link>
 				</li>
