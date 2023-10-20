@@ -10,7 +10,7 @@ const ButtonsProductCard = (props: IButton) => {
 			{/* // TODO: functional Buy now */}
 			{cart && (
 				<button
-					className={`max-[450px]:w-full bg-red-500 text-white px-4 py-2 rounded font-semibold hover:bg-red-600 active:bg-red-500 transition-all duration-300 hover:shadow active:scale-95 
+					className={`max-[450px]:w-full bg-white border text-white px-4 py-2 rounded font-semibold hover:bg-red-600 active:bg-red-500 transition-all duration-300 hover:shadow active:scale-95 
 					${buttonStyle}
 									`}
 				>
@@ -19,7 +19,7 @@ const ButtonsProductCard = (props: IButton) => {
 			)}
 			{wishlist && (
 				<button
-					className={`max-[450px]:w-full bg-blue-500 text-white px-4 py-2 rounded font-semibold hover:bg-blue-600 active:bg-blue-500 transition-all duration-300 hover:shadow active:scale-95 
+					className={`max-[450px]:w-full bg-white border text-white px-4 py-2 rounded font-semibold hover:bg-blue-600 active:bg-blue-500 transition-all duration-300 hover:shadow active:scale-95 
 					${buttonStyle}`}
 				>
 					Add to wishlist
@@ -27,7 +27,7 @@ const ButtonsProductCard = (props: IButton) => {
 			)}
 			{buy && (
 				<button
-					className={`max-[450px]:w-full bg-green-500 text-white px-4 py-2 rounded font-semibold hover:bg-green-600 active:bg-green-500 transition-all duration-300 hover:shadow active:scale-95 
+					className={`max-[450px]:w-full bg-white border text-white px-4 py-2 rounded font-semibold hover:bg-green-600 active:bg-green-500 transition-all duration-300 hover:shadow active:scale-95 
 					${buttonStyle}`}
 				>
 					Buy now
