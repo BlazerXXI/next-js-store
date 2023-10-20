@@ -127,3 +127,17 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+// open-menu-burger
+.open-menu-burger {
+	&:before {
+		content: "";
+		transform: rotate(45deg);
+		top: 0 !important;
+	}
+	&:after {
+		content: "";
+		transform: rotate(-45deg);
+		bottom: 0 !important;
+	}
+}
