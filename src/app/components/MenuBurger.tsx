@@ -5,21 +5,17 @@ const MenuBurger = () => {
 	const toggleMenu = () => {
 		const body = document.querySelector("body");
 		const menuBurgerLine = document.querySelector(".menu-burger__line");
-
 		body?.classList.toggle("open-menu");
 		menuBurgerLine?.classList.toggle("open-menu-burger");
 	};
 
 	useEffect(() => {
-		document.addEventListener("click", (e) => {
-			const menuBurgerButton = document.querySelector(".menu-burger__button");
-			const body = document.querySelector("body");
-
-			if (body?.classList.contains("open-menu")) {
-				e.target !== menuBurgerButton || body?.classList.remove("open-menu");
-			}
+		const body = document.querySelector("body");
+		const menuBurgerLine = document.querySelector(".menu-burger__line");
+		document.addEventListener("click", () => {
+			body?.classList.contains("open-menu");
 		});
-	});
+	}, []);
 
 	return (
 		<div className="menu-burger z-10">
