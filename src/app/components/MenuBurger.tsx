@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const MenuBurger = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
+useEffect(() => {
 	const openMenu = () => {
 		setIsOpen(!isOpen);
 
@@ -18,6 +19,7 @@ const MenuBurger = () => {
 			menuBurgerLine.classList.toggle("open-menu-burger", isOpen);
 		}
 	};
+}
 
 	return (
 		<div className="menu-burger z-10">
