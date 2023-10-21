@@ -7,11 +7,9 @@ const MenuBurger = () => {
 	const openMenu = () => {
 		setIsOpen(!isOpen);
 
-		// Получаем элементы, которым нужно добавить/удалить классы
 		const body = document.querySelector("body");
 		const menuBurgerLine = document.querySelector(".menu-burger__line");
 
-		// Добавляем/удаляем классы в зависимости от состояния isOpen
 		if (body) {
 			body.classList.toggle("open-menu", isOpen);
 		}
