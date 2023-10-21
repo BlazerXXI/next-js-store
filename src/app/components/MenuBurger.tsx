@@ -19,7 +19,7 @@ useEffect(() => {
 			menuBurgerLine.classList.toggle("open-menu-burger", isOpen);
 		}
 	};
-}
+}, [])
 
 	return (
 		<div className="menu-burger z-10">
