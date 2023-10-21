@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 const Sidebar = (props: ISidebar) => {
 	const { propStyles } = props;
 
+useEffect(() => {
 	const closeMenu = () => {
 		const body = document.querySelector("body");
 		const sidebarLinks = document.querySelectorAll(".sidebar__link");
@@ -20,6 +21,7 @@ const Sidebar = (props: ISidebar) => {
 		});
 	};
 	closeMenu();
+}, [])
 
 	return (
 		<div
