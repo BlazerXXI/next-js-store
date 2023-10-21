@@ -21,13 +21,17 @@ useEffect(() => {
 	};
 }, [])
 
+const toggleMenu = () => {
+openMenu()
+}
+
 	return (
 		<div className="menu-burger z-10">
 			{/* TODO: add menu burger (icons with mui of fw )  */}
 			{/* TODO: add cart, later functional for cart */}
 
 			<button
-				onClick={openMenu}
+				onClick={toggleMenu}
 				className="menu-burger__button flex justify-center items-center w-[40px] h-[40px] bg-none rounded cursor-pointer outline-none"
 			>
 				<span
