@@ -5,10 +5,12 @@ const MenuBurger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openMenu = () => {
-    setIsOpen(!isOpen);
+    /* setIsOpen(!isOpen); */
     
     const body = document.querySelector("body");
     const menuBurgerLine = document.querySelector(".menu-burger__line");
+
+    body.classList.contains("open-menu") ? setIsOpen(false) : setIsOpen(true)
 
     if (body) {
       body.classList.toggle("open-menu", isOpen);
