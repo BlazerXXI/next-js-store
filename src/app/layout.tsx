@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Roboto } from "next/font/google";
+import { useState } from "react";
+import Popup from "./components/Popup";
 
 const roboto = Roboto({
 	subsets: ["latin"],
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 // import favicon icon
-<link rel="icon" href="/public/favicon.svg" sizes="any" />
+<link rel="icon" href="/public/favicon.svg" sizes="any" />;
 
 export default function RootLayout({
 	children,
@@ -29,7 +31,7 @@ export default function RootLayout({
 					<Header />
 					<main>{children}</main>
 					{/* TODO: add popup after click  */}
-					<button className="call-us">Call us</button>
+					<Popup />
 					<Footer />
 				</div>
 			</body>

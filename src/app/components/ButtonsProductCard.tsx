@@ -1,4 +1,9 @@
 import React from "react";
+import {
+	ShoppingCartOutlined,
+	FavoriteBorderOutlined,
+	LocalMallOutlined,
+} from "@mui/icons-material";
 
 const ButtonsProductCard = (props: IButton) => {
 	const { cart, wishlist, buy, buttonStyle } = props;
@@ -10,30 +15,35 @@ const ButtonsProductCard = (props: IButton) => {
 			{/* // TODO: functional Buy now */}
 			{cart && (
 				<button
-					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 
-					${buttonStyle}
-									`}
+					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
+						buttonStyle !== undefined ? buttonStyle : ""
+					}`}
 				>
-					Add to cart
+					<span>Add to cart</span>
 					{/* add icons */}
+					<ShoppingCartOutlined />
 				</button>
 			)}
 			{wishlist && (
 				<button
-					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 
-					${buttonStyle}`}
+					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
+						buttonStyle !== undefined ? buttonStyle : ""
+					}`}
 				>
 					Add to wishlist
 					{/* add icons */}
+					<FavoriteBorderOutlined />
 				</button>
 			)}
 			{buy && (
 				<button
-					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 
-					${buttonStyle}`}
+					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
+						buttonStyle !== undefined ? buttonStyle : ""
+					}`}
 				>
 					Buy now
 					{/* add icons */}
+					<LocalMallOutlined />
 				</button>
 			)}
 		</div>

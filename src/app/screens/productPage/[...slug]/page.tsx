@@ -33,6 +33,7 @@ const Product = ({
 					</p>
 					<Image
 						className="shop__loading-image animate-spin"
+						priority
 						src={"/spinner-solid.svg"}
 						alt="Vercel Logo"
 						width={72}
@@ -62,7 +63,7 @@ const Product = ({
 								</div>
 								<div>
 									<span className="font-semibold">Category:</span>
-									<h3 className="font-semibold">{product.category}</h3>
+									<h3>{product.category}</h3>
 								</div>
 							</div>
 							<div className="flex max-sm:flex-col flex-row justify-between items-center w-full max-[450px]:gap-4">

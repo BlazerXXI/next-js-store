@@ -21,6 +21,7 @@ const Account = () => {
 					</p>
 					<Image
 						className="shop__loading-image animate-spin"
+						priority
 						src={"/spinner-solid.svg"}
 						alt="Vercel Logo"
 						width={72}
