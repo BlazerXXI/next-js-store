@@ -12,8 +12,19 @@ const MenuBurger = () => {
 	useEffect(() => {
 		const body = document.querySelector("body");
 		const menuBurgerLine = document.querySelector(".menu-burger__line");
-		document.addEventListener("click", () => {
-			body?.classList.contains("open-menu");
+		const menuBurgerBtn = document.querySelector(".menu-burger__button");
+		const menuBurgerMenu = document.querySelector(".menu-burger__menu");
+		document.addEventListener("click", (e) => {
+			const target = e.target;
+			if (
+				body?.classList.contains("open-menu") &&
+				target !== menuBurgerBtn &&
+				target !== menuBurgerLine &&
+				target !== menuBurgerMenu
+			) {
+				body?.classList.remove("open-menu");
+				menuBurgerLine?.classList.remove("open-menu-burger");
+			}
 		});
 	}, []);
 
