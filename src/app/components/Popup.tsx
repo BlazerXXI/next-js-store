@@ -6,7 +6,6 @@ const Popup = () => {
 
 	const openPopup = () => {
 		setPopup(!popup);
-		document.querySelector("body").classList.toggle("overflow-hidden");
 	};
 
 	return (
