@@ -12,7 +12,6 @@ const Product = ({
 		slug: number;
 	};
 }) => {
-	const [loading, setLoading] = useState(true);
 	const [products, setProducts] = useState<IProducts[]>([]);
 	const [product, setProduct] = useState<IProducts>();
 
@@ -20,27 +19,13 @@ const Product = ({
 		getProducts.getAll().then((data) => {
 			setProducts(data);
 			setProduct(data[params.slug - 1]);
-			setLoading(false);
+			// setLoading(false);
 		});
 	});
 
 	return (
 		<>
-			{loading ? (
-				<div className="flex flex-col justify-center items-center gap-10">
-					<p className="shop__loading fw-bold text-2xl text-center">
-						Loading...
-					</p>
-					<Image
-						className="shop__loading-image animate-spin"
-						priority
-						src={"/spinner-solid.svg"}
-						alt="Vercel Logo"
-						width={72}
-						height={72}
-					/>
-				</div>
-			) : product !== undefined ? (
+			{product !== undefined ? (
 				<section className="product">
 					<div className="product__container container flex md:flex-row flex-col gap-8 shadow-lg py-8 px-4">
 						<div className="max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
@@ -76,7 +61,7 @@ const Product = ({
 					</div>
 				</section>
 			) : (
-				<NotFound />
+				<NotFound text="Product not found" />
 			)}
 		</>
 	);

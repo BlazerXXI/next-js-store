@@ -1,13 +1,16 @@
+import Link from "next/link";
 import React from "react";
 
-const NotFound = () => {
+const NotFound = (props: INotFound) => {
+	const { text } = props;
 	return (
 		<section className="NotFound">
-			<div className="NotFound__container container">
-				<div className="NotFound__title-banner">
-					<h1>Next Store</h1>
-				</div>
-				<h2>Product not found</h2>
+			<div className="not-found__container container flex flex-col justify-center items-center gap-4">
+				<h2>Not Found</h2>
+				<p>{text || "Product not found"}</p>
+				<Link className="not-found__link underline hover:no-underline" href="/">
+					Return Home
+				</Link>
 			</div>
 		</section>
 	);

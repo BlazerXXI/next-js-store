@@ -1,20 +1,24 @@
 // Types
-type IProducts = {
+interface IProducts {
 	id: number;
 	title: string;
 	price: number;
 	description: string;
 	category: string;
 	image: string;
-};
+}
 
-type IButton = {
+interface IButton {
 	cart?: boolean;
 	wishlist?: boolean;
 	buy?: boolean;
 	buttonStyle?: string;
-};
+}
 
-type ISidebar = {
+interface ISidebar {
 	propStyles?: string;
-};
+}
+
+interface INotFound {
+	text?: string;
+}
