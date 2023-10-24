@@ -23,7 +23,7 @@ const Popup = () => {
 			<div
 				className={`${
 					popup ? "flex" : "hidden"
-				} justify-center text-2xl flex-col gap-4 items-center fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-[9] bg-white shadow-lg rounded p-[30px] md:h-[400px] md:w-[400px] w-screen h-screen mt-[60px]`}
+				} justify-center text-2xl flex-col gap-4 items-center fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-[9] bg-white shadow-lg rounded p-[30px] md:h-[400px] md:w-[400px] w-screen h-screen max-md:mt-[60px]`}
 			>
 				<CloseIcon
 					className="cursor-pointer absolute top-[30px] right-[30px]"

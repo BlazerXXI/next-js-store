@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Roboto } from "next/font/google";
-import { useState } from "react";
 import Popup from "./components/Popup";
 
 const roboto = Roboto({
@@ -30,7 +29,6 @@ export default function RootLayout({
 				<div className="wrapper">
 					<Header />
 					<main>{children}</main>
-					{/* TODO: add popup after click  */}
 					<Popup />
 					<Footer />
 				</div>
