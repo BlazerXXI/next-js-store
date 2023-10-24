@@ -1,19 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Popup = () => {
 	const [popup, setPopup] = useState(false);
-	const [headerHeight, setHeaderHeight] = useState("");
 
 	const openPopup = () => {
 		setPopup(!popup);
+		document.querySelector("body").classList.toggle("overflow-hidden");
 	};
-
-	useEffect(() => {
-		const header = document.querySelector("header");
-
-		setHeaderHeight(header.innerHeight);
-	});
 
 	return (
 		<>
@@ -21,7 +15,7 @@ const Popup = () => {
 				className={`${
 					popup ? "flex" : "hidden"
 				} fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50 bg-white shadow-lg rounded p-4 md:first-letter:h-[400px] md:w-[400px] w-screen h-screen
-				mt-[${headerHeight}]`}
+				mt-[60px]`}
 			>
 				<h3>popup</h3>
 			</div>
