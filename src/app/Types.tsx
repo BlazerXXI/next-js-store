@@ -13,9 +13,14 @@ interface IButton {
 	wishlist?: boolean;
 	buy?: boolean;
 	buttonStyle?: string;
-	id?: number;
+	id: number;
 	btnText?: boolean;
 	btnContainerStyle?: string;
+}
+
+// Define a type for the slice state
+interface ButtonsState {
+	id: number[];
 }
 
 interface ISidebar {

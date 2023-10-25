@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Roboto } from "next/font/google";
 import Popup from "./components/Popup";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
+import { ReduxProvider } from "@/redux/provider";
 
 const roboto = Roboto({
 	subsets: ["latin"],
@@ -26,12 +29,14 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={roboto.className}>
-				<div className="wrapper">
-					<Header />
-					<main>{children}</main>
-					<Popup />
-					<Footer />
-				</div>
+				<ReduxProvider>
+					<div className="wrapper">
+						<Header />
+						<main>{children}</main>
+						<Popup />
+						<Footer />
+					</div>
+				</ReduxProvider>
 			</body>
 		</html>
 	);

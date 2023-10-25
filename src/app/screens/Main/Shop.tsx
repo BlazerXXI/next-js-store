@@ -8,7 +8,6 @@ import { Menu } from "@mui/base";
 import Dropdown from "@mui/joy/Dropdown";
 import { MenuButton } from "@mui/joy";
 import Loading from "@/app/loading";
-import Banner from "./Banner";
 
 const Shop = () => {
 	const [products, setProducts] = useState<IProducts[]>([]);
@@ -27,7 +26,6 @@ const Shop = () => {
 				<Loading />
 			) : (
 				<div className="shop__container container">
-					<Banner />
 					<ul className="shop__list flex flex-wrap gap-8 justify-center">
 						{products.map((product: IProducts) => (
 							<li
