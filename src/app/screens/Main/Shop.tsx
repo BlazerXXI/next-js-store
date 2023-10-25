@@ -29,12 +29,12 @@ const Shop = () => {
 					<ul className="shop__list flex flex-wrap gap-8 justify-center">
 						{products.map((product: IProducts) => (
 							<li
-								className="shop__item w-80 shadow-lg bg-white h-full p-4 flex flex-col gap-4 items-end"
+								className="shop__item w-80 shadow-lg bg-white h-auto p-4 flex flex-col gap-4 items-center justify-between rounded	"
 								key={product.id}
 							>
 								{/* TODO: fix ratio image, console retun warning */}
 								<Link
-									className="flex flex-col justify-between  items-center gap-4 "
+									className="flex flex-col justify-between  items-center gap-4 h-full"
 									href={`/screens/productPage/${product.id}`}
 									key={product.id}
 								>
