@@ -44,11 +44,11 @@ body {
 	font-size: 16px;
 	font-weight: 600;
 	&:hover {
-		transform: scale(1.1);
+		transform: scale(1.01);
 		opacity: 0.8;
 	}
 	&:active {
-		transform: scale(0.8);
+		transform: scale(0.99);
 		opacity: 1;
 	}
 	@media (max-width: 768px) {
@@ -63,7 +63,7 @@ a:not(.logo) {
 	}
 	&:active {
 		opacity: 1;
-		transform: scale(0.8);
+		transform: scale(0.99);
 	}
 }
 
@@ -149,4 +149,18 @@ footer {
 
 .open-menu .menu-burger__menu {
 	transform: translate(0);
+}
+
+// MuiMenu-root
+.MuiMenu-root {
+	background-color: rgb(var(--background-end-rgb), 0.2);
+}
+// shop__btnContainer
+.shop__btnContainer {
+	flex-direction: row !important;
+}
+
+// MuiMenuButton-root
+.MuiMenuButton-root {
+	width: 50%;
 }

@@ -13,6 +13,9 @@ interface IButton {
 	wishlist?: boolean;
 	buy?: boolean;
 	buttonStyle?: string;
+	id?: number;
+	btnText?: boolean;
+	btnContainerStyle?: string;
 }
 
 interface ISidebar {

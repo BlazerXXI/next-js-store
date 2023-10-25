@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { getProducts } from "../../Main/getProducts";
 import NotFound from "../NotFound";
 import ButtonsProductCard from "@/app/components/ButtonsProductCard";
+import Loading from "@/app/loading";
 
 const Product = ({
 	params,
@@ -14,16 +15,19 @@ const Product = ({
 }) => {
 	const [products, setProducts] = useState<IProducts[]>([]);
 	const [product, setProduct] = useState<IProducts>();
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	useEffect(() => {
 		getProducts.getAll().then((data) => {
+			setIsLoading(true);
 			setProducts(data);
 			setProduct(data[params.slug - 1]);
-			// setLoading(false);
 		});
 	});
 
-	return (
+	return !isLoading ? (
+		<Loading />
+	) : (
 		<>
 			{product !== undefined ? (
 				<section className="product">
@@ -55,7 +59,13 @@ const Product = ({
 								<p className="font-semibold">
 									{product.price} <span>$</span>
 								</p>
-								<ButtonsProductCard cart wishlist buy />
+								<ButtonsProductCard
+									cart
+									wishlist
+									buy
+									btnText
+									id={params.slug}
+								/>
 							</div>
 						</div>
 					</div>
