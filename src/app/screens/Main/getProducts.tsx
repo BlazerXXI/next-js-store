@@ -11,4 +11,8 @@ export const getProducts = {
 		const { data } = await axios.get(API_URL);
 		return data;
 	},
+	getProductById: async (id: number) => {
+		const { data } = await axios.get(API_URL);
+		return data[id];
+	},
 };

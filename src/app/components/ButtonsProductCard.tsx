@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import {
 	ShoppingCartOutlined,
 	FavoriteBorderOutlined,
@@ -6,29 +6,38 @@ import {
 	Payment,
 } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
-import { PayloadAction } from "@reduxjs/toolkit";
 import { setCart } from "@/redux/features/cartSlice";
 import { setWishlist } from "@/redux/features/wishlistSlice";
 import { setBuy } from "@/redux/features/buySlice";
+import { setNotification } from "@/redux/features/notificationSlice";
 
 const ButtonsProductCard = (props: IButton) => {
 	const { cart, wishlist, buy, buttonStyle, btnText, btnContainerStyle, id } =
 		props;
 
+	const [notificationText, setNotificationText] = useState("");
+
 	const dispatch = useAppDispatch();
 	const state = useAppSelector((state) => state);
 
-	const addToWishlist = (id: number) => {
-		dispatch(setWishlist(id));
+	const addToList = (id: number, text: string) => {
+		switch (text) {
+			case "wishlist":
+				dispatch(setWishlist(id));
+				break;
+			case "cart":
+				dispatch(setCart(id));
+				break;
+			case "buy":
+				dispatch(setBuy(id));
+				break;
+			default:
+				break;
+		}
+		
+		dispatch(setNotification(text));
 		console.log(id);
-	};
-	const addToCart = (id: number) => {
-		dispatch(setCart(id));
-		console.log(id);
-	};
-	const buyNow = (id: number) => {
-		dispatch(setBuy(id));
-		console.log(id);
+
 	};
 
 	return (
@@ -40,7 +49,7 @@ const ButtonsProductCard = (props: IButton) => {
 			{/* // TODO: functional Buy now */}
 			{wishlist && (
 				<button
-					onClick={() => addToWishlist(id)}
+					onClick={() => addToList(id, "wishlist")}
 					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
 						buttonStyle !== undefined ? buttonStyle : ""
 					}`}
@@ -54,7 +63,7 @@ const ButtonsProductCard = (props: IButton) => {
 			)}
 			{cart && (
 				<button
-					onClick={() => addToCart(id)}
+					onClick={() => addToList(id, "cart")}
 					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
 						buttonStyle !== undefined ? buttonStyle : ""
 					}`}
@@ -69,7 +78,7 @@ const ButtonsProductCard = (props: IButton) => {
 
 			{buy && (
 				<button
-					onClick={() => buyNow(id)}
+					onClick={() => addToList(id, "buy")}
 					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
 						buttonStyle !== undefined ? buttonStyle : ""
 					}`}

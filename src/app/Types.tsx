@@ -19,8 +19,13 @@ interface IButton {
 }
 
 // Define a type for the slice state
+
 interface ButtonsState {
 	id: number[];
+}
+
+interface notificationState {
+	text: string;
 }
 
 interface ISidebar {

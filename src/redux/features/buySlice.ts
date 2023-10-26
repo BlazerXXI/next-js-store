@@ -2,13 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@/redux/store";
 
 // Define a type for the slice state
-interface BuyState {
-	id: number | null;
-}
 
 // Define the initial state using that type
-const initialState: BuyState = {
-	id: null,
+const initialState: ButtonsState = {
+	id: [],
 };
 
 export const buySlice = createSlice({
@@ -17,7 +14,7 @@ export const buySlice = createSlice({
 	initialState,
 	reducers: {
 		setBuy: (state, action: PayloadAction<number>) => {
-			state.id = action.payload;
+			state.id.push(action.payload);
 		},
 	},
 });
