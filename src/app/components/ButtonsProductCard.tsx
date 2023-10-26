@@ -20,15 +20,15 @@ const ButtonsProductCard = (props: IButton) => {
 
 	const addToWishlist = (id: number) => {
 		dispatch(setWishlist(id));
-		console.log(state.wishlist);
+		console.log(id);
 	};
 	const addToCart = (id: number) => {
 		dispatch(setCart(id));
-		console.log(state.cart);
+		console.log(id);
 	};
 	const buyNow = (id: number) => {
 		dispatch(setBuy(id));
-		console.log(state.buy);
+		console.log(id);
 	};
 
 	return (

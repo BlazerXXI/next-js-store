@@ -4,14 +4,13 @@ import React, { useEffect, useState } from "react";
 import { getProducts } from "../Main/getProducts";
 import Loading from "@/app/loading";
 import Image from "next/image";
-import Product from "../productPage/[...slug]/page";
 import { Add } from "@mui/icons-material";
 import Link from "next/link";
 
 // ...
 
 const Cart = () => {
-	const [cartProducts, setCartProducts] = useState<IProducts[]>([]); // Список продуктов в корзине
+	const [cartProducts, setCartProducts] = useState<IProducts[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const dispatch = useAppDispatch();
@@ -53,11 +52,24 @@ const Cart = () => {
 						</Link>
 					</div>
 				) : (
-					<div className="cart__list">
+					<ul className="cart__list">
 						{cartProducts.map((product: IProducts) => (
-							<Product key={product.id} params={{ slug: product.id }} />
+							<li key={product.id} className="cart__item">
+								<Image
+									src={product.image}
+									width={200}
+									height={200}
+									alt={product.title}
+								/>
+								<div>
+									<p>{product.id}</p>
+									<p>{state.cart.id}</p>
+									<h4>{product.title}</h4>
+									<p>{product.price}</p>
+								</div>
+							</li>
 						))}
-					</div>
+					</ul>
 				)}
 			</div>
 		</section>
