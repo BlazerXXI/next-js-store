@@ -14,13 +14,13 @@ const Notification = () => {
 		setTimeout(() => {
 			setNotificationText("");
 		}, 10000);
-	});
+	}, [state.notification.text]);
 
 	return (
 		<div
 			className={`notification ${
-				notificationText ? "block" : "hidden"
-			} fixed bottom-[20px] left-1/2 -translate-x-1/2 bg-white p-4 border rounded-lg shadow-md`}
+				notificationText ? "bottom-[20px]" : "bottom-[-200px]"
+			} fixed bottom-[20px] left-1/2 -translate-x-1/2 transition-all bg-white p-4 border rounded-lg shadow-md`}
 		>
 			<p className={`notification__text`}>
 				Ready! The goods are added to {notificationText}
