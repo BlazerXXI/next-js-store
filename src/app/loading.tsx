@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Loading = () => {
 	return (
-		<div className="flex flex-col justify-center items-center gap-10">
+		<div className="flex flex-col justify-center items-center gap-10 flex-auto">
 			<p className="shop__loading fw-bold text-2xl text-center">Loading...</p>
 			<Image
 				className="shop__loading-image animate-spin"

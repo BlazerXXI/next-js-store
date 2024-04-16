@@ -15,18 +15,13 @@ const Cart = () => {
 	const state = useAppSelector((state) => state);
 
 	useEffect(() => {
-		if (state.cart.id.length === 0) {
-			setIsLoading(true);
-			return;
-		}
-
 		const productsInCart: IProducts[] = [];
 
+		productsInCart && setIsLoading(false);
 		const loadProduct = async (id: number) => {
 			try {
 				const data = await getProducts.getProductById(id);
 				productsInCart.push(data);
-
 				if (productsInCart.length === state.cart.id.length) {
 					setIsLoading(false);
 					setCartProducts(productsInCart);
@@ -36,18 +31,22 @@ const Cart = () => {
 			}
 		};
 
-		// Загрузка продуктов для каждого ID в корзине
 		state.cart.id.forEach((id) => {
 			loadProduct(id);
 		});
-	}, [state.cart.id]);
+	}, []);
 
-	return !isLoading ? (
+	console.log(state.cart.id);
+	console.log(cartProducts);
+
+	return isLoading ? (
 		<Loading />
 	) : (
 		<section className="cart">
 			<div className="cart__container container min-h-screen">
-				<h2 hidden>Cart</h2>
+				<h2 className="cart__title text-[27px] py-5 text-center border-b border-black">
+					Cart
+				</h2>
 				{cartProducts.length === 0 ? (
 					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">
 						<h2 className="cart__empty font-semibold text-2xl">
@@ -60,7 +59,7 @@ const Cart = () => {
 				) : (
 					<ul className="cart__list">
 						{cartProducts.map((product: IProducts) => (
-							<li key={product.id} className="cart__item">
+							<li key={product.image + product.id} className="cart__item">
 								<Image
 									src={product.image}
 									width={200}

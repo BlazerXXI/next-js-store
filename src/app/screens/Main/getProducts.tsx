@@ -13,6 +13,6 @@ export const getProducts = {
 	},
 	getProductById: async (id: number) => {
 		const { data } = await axios.get(API_URL);
-		return data[id];
+		return data[id - 1];
 	},
 };
