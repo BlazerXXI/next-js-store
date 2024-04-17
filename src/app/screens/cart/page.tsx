@@ -58,9 +58,12 @@ const Cart = () => {
 						</Link>
 					</div>
 				) : (
-					<ul className="cart__list mt-5">
+					<ul className="cart__list mt-5 flex flex-col gap-4">
 						{cartProducts.map((product: IProducts) => (
-							<li key={product.image + product.id} className="cart__item">
+							<li
+								key={product.image + product.id}
+								className="cart__item border border-[#e0e0e0] p-4"
+							>
 								<ProductItem {...product} deleteBtn />
 							</li>
 						))}
