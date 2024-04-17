@@ -12,10 +12,22 @@ interface IButton {
 	cart?: boolean;
 	wishlist?: boolean;
 	buy?: boolean;
+	deleteBtn?: boolean;
 	buttonStyle?: string;
 	id: number;
 	btnText?: boolean;
 	btnContainerStyle?: string;
+}
+
+interface IproductItem {
+	id: any;
+	image: string;
+	title: string;
+	price: number;
+	cart?: boolean;
+	wishlist?: boolean;
+	buy?: boolean;
+	deleteBtn?: boolean;
 }
 
 // Define a type for the slice state

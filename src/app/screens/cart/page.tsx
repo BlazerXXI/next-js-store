@@ -6,6 +6,7 @@ import Loading from "@/app/loading";
 import Image from "next/image";
 import { Add } from "@mui/icons-material";
 import Link from "next/link";
+import ProductItem from "@/app/components/ProductItem";
 
 const Cart = () => {
 	const [cartProducts, setCartProducts] = useState<IProducts[]>([]);
@@ -57,20 +58,10 @@ const Cart = () => {
 						</Link>
 					</div>
 				) : (
-					<ul className="cart__list">
+					<ul className="cart__list mt-5">
 						{cartProducts.map((product: IProducts) => (
 							<li key={product.image + product.id} className="cart__item">
-								<Image
-									src={product.image}
-									width={200}
-									height={200}
-									alt={product.title}
-								/>
-								<div>
-									<p>{product.id}</p>
-									<h4>{product.title}</h4>
-									<p>{product.price}</p>
-								</div>
+								<ProductItem {...product} deleteBtn />
 							</li>
 						))}
 					</ul>

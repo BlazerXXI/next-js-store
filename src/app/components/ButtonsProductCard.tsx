@@ -4,16 +4,26 @@ import {
 	FavoriteBorderOutlined,
 	LocalMallOutlined,
 	Payment,
+	Delete,
 } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { setCart } from "@/redux/features/cartSlice";
 import { setWishlist } from "@/redux/features/wishlistSlice";
 import { setBuy } from "@/redux/features/buySlice";
 import { setNotification } from "@/redux/features/notificationSlice";
+import { setDelete } from "@/redux/features/deleteSlice";
 
 const ButtonsProductCard = (props: IButton) => {
-	const { cart, wishlist, buy, buttonStyle, btnText, btnContainerStyle, id } =
-		props;
+	const {
+		cart,
+		wishlist,
+		buy,
+		deleteBtn,
+		buttonStyle,
+		btnText,
+		btnContainerStyle,
+		id,
+	} = props;
 
 	const [notificationText, setNotificationText] = useState("");
 
@@ -34,10 +44,15 @@ const ButtonsProductCard = (props: IButton) => {
 			default:
 				break;
 		}
-		
+
 		dispatch(setNotification(text));
 		console.log(id);
+	};
 
+	const deleteFromList = (id: number, text: string) => {
+		dispatch(setDelete(id));
+
+		dispatch(setNotification(text));
 	};
 
 	return (
@@ -86,6 +101,20 @@ const ButtonsProductCard = (props: IButton) => {
 					<span className={` ${btnText ? "block" : "hidden"}`}>Buy now</span>
 					{/* add icons */}
 					<Payment />
+					{/* Pay */}
+				</button>
+			)}
+
+			{deleteBtn && (
+				<button
+					onClick={() => deleteFromList(id, "Removed")}
+					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
+						buttonStyle !== undefined ? buttonStyle : ""
+					}`}
+				>
+					<span className={` ${btnText ? "block" : "hidden"}`}>Delete</span>
+					{/* add icons */}
+					<Delete />
 					{/* Pay */}
 				</button>
 			)}

@@ -3,12 +3,14 @@ import wishlistSlice from "./features/wishlistSlice";
 import cartSlice from "./features/cartSlice";
 import buySlice from "./features/buySlice";
 import notificationSlice from "./features/notificationSlice";
+import deleteSlice from "./features/deleteSlice";
 
 export const store = configureStore({
 	reducer: {
 		wishlist: wishlistSlice,
 		cart: cartSlice,
 		buy: buySlice,
+		delete: deleteSlice,
 		notification: notificationSlice,
 	},
 });
