@@ -59,12 +59,12 @@ const Cart = () => {
 					</div>
 				) : (
 					<ul className="cart__list mt-5 flex flex-col gap-4">
-						{cartProducts.map((product: IProducts) => (
+						{cartProducts.map((product: IProducts, index: number) => (
 							<li
-								key={product.image + product.id}
+								key={index}
 								className="cart__item border border-[#e0e0e0] p-4"
 							>
-								<ProductItem {...product} deleteBtn />
+								<ProductItem {...product} key={index} deleteBtn buy />
 							</li>
 						))}
 					</ul>

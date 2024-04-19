@@ -33,7 +33,7 @@ const Shop = () => {
 								className="shop__item w-80 shadow-lg bg-white h-auto p-4 flex flex-col gap-4 items-center justify-between rounded	"
 								key={product.id}
 							>
-								<ProductItem {...product} cart wishlist buy />
+								<ProductItem key={product.id} {...product} cart wishlist buy />
 							</li>
 						))}
 					</ul>

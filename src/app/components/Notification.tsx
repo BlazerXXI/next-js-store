@@ -1,5 +1,6 @@
 "use client";
 import { useAppSelector, useAppDispatch } from "@/redux/hook";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Notification = () => {
@@ -23,7 +24,13 @@ const Notification = () => {
 			} fixed left-1/2 -translate-x-1/2 transition-all bg-white p-4 border rounded-lg shadow-md`}
 		>
 			<p className={`notification__text`}>
-				Ready! The goods are added to {notificationText}
+				Ready! The goods are added to{" "}
+				<Link
+					className="notification__link hover:underline transition-all active:scale-90 font-bold"
+					href={`/screens/${notificationText}`}
+				>
+					{notificationText}
+				</Link>
 			</p>
 		</div>
 	);

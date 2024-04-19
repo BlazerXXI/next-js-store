@@ -7,7 +7,7 @@ import {
 	Delete,
 } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
-import { setCart } from "@/redux/features/cartSlice";
+import cartSlice, { setCart } from "@/redux/features/cartSlice";
 import { setWishlist } from "@/redux/features/wishlistSlice";
 import { setBuy } from "@/redux/features/buySlice";
 import { setNotification } from "@/redux/features/notificationSlice";
@@ -34,9 +34,11 @@ const ButtonsProductCard = (props: IButton) => {
 		switch (text) {
 			case "wishlist":
 				dispatch(setWishlist(id));
+				dispatch(setNotification(text));
 				break;
 			case "cart":
 				dispatch(setCart(id));
+				dispatch(setNotification(text));
 				break;
 			case "buy":
 				dispatch(setBuy(id));
@@ -45,14 +47,7 @@ const ButtonsProductCard = (props: IButton) => {
 				break;
 		}
 
-		dispatch(setNotification(text));
 		console.log(id);
-	};
-
-	const deleteFromList = (id: number, text: string) => {
-		dispatch(setDelete(id));
-
-		dispatch(setNotification(text));
 	};
 
 	return (
@@ -107,7 +102,6 @@ const ButtonsProductCard = (props: IButton) => {
 
 			{deleteBtn && (
 				<button
-					onClick={() => deleteFromList(id, "Removed")}
 					className={`max-[450px]:w-full bg-white border px-4 py-2 rounded font-semibold hover:scale-105 transition-all duration-300 hover:shadow active:scale-95 flex items-center justify-center gap-3 ${
 						buttonStyle !== undefined ? buttonStyle : ""
 					}`}

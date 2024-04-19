@@ -90,7 +90,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	margin: 60px 0px;
+	margin: 80px 0px;
 }
 
 footer {
@@ -162,4 +162,17 @@ footer {
 // MuiMenuButton-root
 .MuiMenuButton-root {
 	width: 100%;
+}
+
+// sidebar__link
+.sidebar__link {
+	transition: all 0.3s ease 0s;
+	&:hover {
+		opacity: 0.8;
+		text-decoration: underline;
+	}
+	&:active {
+		opacity: 1;
+		transform: scale(0.99);
+	}
 }

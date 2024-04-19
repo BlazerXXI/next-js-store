@@ -5,6 +5,7 @@ import MenuBurger from "./MenuBurger";
 import MenuBar from "./MenuBar";
 import { Avatar } from "@mui/joy";
 import Sidebar from "./Sidebar";
+import NavigationMenu from "./NavigationMenu";
 
 const Header = () => {
 	return (
@@ -13,6 +14,10 @@ const Header = () => {
 				<div className="flex justify-between items-center">
 					<MenuBar />
 					<div className="flex gap-4">
+						<NavigationMenu
+							classNames="max-md:hidden"
+							flexDirection="flex-row"
+						/>
 						<Link
 							className="hover:opacity-80 transition-all active:scale-90"
 							href={"/screens/account"}
@@ -21,7 +26,7 @@ const Header = () => {
 							{/* TODO: add account page */}
 							<Avatar />
 						</Link>
-						<MenuBurger />
+						<MenuBurger classNames="md:hidden" />
 					</div>
 				</div>
 			</div>

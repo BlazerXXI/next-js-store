@@ -13,8 +13,12 @@ export const cartSlice = createSlice({
 	// `createSlice` will infer the state type from the `initialState` argument
 	initialState,
 	reducers: {
-		setCart: (state, action: PayloadAction<number>) => {
-			state.id.push(action.payload);
+		setCart: (state, action: PayloadAction<number | number[]>) => {
+			if (Array.isArray(action.payload)) {
+				state.id.push(...action.payload);
+			} else {
+				state.id.push(action.payload);
+			}
 		},
 	},
 });

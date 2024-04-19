@@ -47,3 +47,12 @@ interface ISidebar {
 interface INotFound {
 	text?: string;
 }
+
+interface IMenuBurger {
+	classNames?: string;
+}
+
+interface INavigationMenu {
+	classNames?: string;
+	flexDirection?: string;
+}

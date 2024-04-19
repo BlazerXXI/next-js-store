@@ -37,6 +37,7 @@ const ProductItem = (props: IproductItem) => {
 			{deleteBtn && (
 				<ButtonsProductCard
 					deleteBtn={deleteBtn}
+					buy={buy}
 					id={id}
 					btnContainerStyle="shop__btnContainer px-4 py-2 justify-end"
 				/>

@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 
-const MenuBurger = () => {
+const MenuBurger = (props: IMenuBurger) => {
+	const { classNames } = props;
 	const toggleMenu = () => {
 		const body = document.querySelector("body");
 		const menuBurgerLine = document.querySelector(".menu-burger__line");
@@ -29,7 +30,7 @@ const MenuBurger = () => {
 	}, []);
 
 	return (
-		<div className="menu-burger z-10">
+		<div className={`menu-burger z-10 ${classNames}`}>
 			{/* TODO: add menu burger (icons with mui of fw )  */}
 			{/* TODO: add cart, later functional for cart */}
 
